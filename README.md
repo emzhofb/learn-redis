@@ -1,17 +1,31 @@
 # learn-redis
 
-* **redis-cli** open the redis
-* **SET server:name "ikhda"** => to set the server name
-* **GET server:name** => output will be "ikhda" because we has been declared the server name before
-* **SET connections 10** => change SET to SETNX (SET-if-not-exists) if necessary
-* **INCR connections** => incrementing the data we set before
-* **DEL connections** => delete the data
-* **SET resource:lock "Redis Demo"** => set the data
-* **EXPIRE resource:lock 20** => set the data to be expired in 20 seconds
-* **TTL resource:lock** => check the data, if expired will output -2 or -1 if the expiration not set, either will output the time left
-* **RPUSH friends "Alice"** => will push data to array and in the right (tail)
-* **LPUSH friends "Sam"** => will push data to array and in the left (head)
-* **LRANGE friends 0 -1** => show the data between 0 index to the last, we can change 0 with the index we want and also for -1
-* **LLEN friends** => return the length of the data
-* **LPOP friends** => remove the first element (left)
-* **RPOP friends** => remove the last element (right)
+- **redis-cli** open the redis
+- **SET server:name "ikhda"** => to set the server name
+- **GET server:name** => output will be "ikhda" because we has been declared the server name before
+- **SET connections 10** => change SET to SETNX (SET-if-not-exists) if necessary
+- **INCR connections** => incrementing the data we set before
+- **DEL connections** => delete the data
+- **SET resource:lock "Redis Demo"** => set the data
+- **EXPIRE resource:lock 20** => set the data to be expired in 20 seconds
+- **TTL resource:lock** => check the data, if expired will output -2 or -1 if the expiration not set, either will output the time left
+- **RPUSH friends "Alice"** => will push data to array and in the right (tail)
+- **LPUSH friends "Sam"** => will push data to array and in the left (head)
+- **LRANGE friends 0 -1** => show the data between 0 index to the last, we can change 0 with the index we want and also for -1
+- **LLEN friends** => return the length of the data
+- **LPOP friends** => remove the first element (left)
+- **RPOP friends** => remove the last element (right)
+- **SADD superpowers "flight"** => add data but doesn't have a specific order
+- **SREM superpowers "flight"** => remove data
+- **SMEMBERS superpowers** => showing the members
+- **SISMEMBER superpowers "flight"** => check the value, return 1 if the value is there and 0 if not
+- **SUNION superpowers birdpowers** => assume that birdpowers is exists, then the value of superpowers and birdpowers will showing up
+- **ZADD hackers 1940 "Alan Kay"** => this is sorted
+- **ZRANGE hackers 2 4** => showing the range
+- **HSET user:1000 name "John Smith"** => you can change name to another field like username, email, or password and so on
+- **HMSET user:1001 name "Mary Jones" password "hidden" email "mjones@example.com"** => set multiple field
+- **HGETALL user:1000** => get all info of the user
+- **HGET user:1001 name** => get specific field of the user
+- **HSET user:1000 visits 10** => set the user visit
+- **HINCRBY user:1000 visits 1** => will add 10 with 1
+- **HDEL user:1000 visits** => will delete the user visit
